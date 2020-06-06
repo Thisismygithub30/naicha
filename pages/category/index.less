@@ -1,0 +1,68 @@
+/* pages/category/index.wxss */
+page{
+    height: 100%;
+}
+
+.cates{
+    height: 100%;
+    .cates_cotainer{
+        height: ~'calc( 100vh - 90rpx)';
+        display: flex;
+
+        .left_menu{
+            // 伸缩盒子的子项 默认高度 父级100% 
+            flex: 2;
+            
+            .menu_item{
+                height: 80rpx;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 30rpx;
+            }
+            .active{
+                color: var(--themeColor);
+                border-left: 5rpx solid currentColor;
+            }
+
+
+        }
+        .right_content{
+            // 子项 高度 100% 
+            flex: 5;
+            .goods_group{
+                .goods_title{
+                    height: 80rpx;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .delimiter{
+                        color: silver;
+                        padding: 0 10rpx;
+                    }
+                    .title{
+
+                    }
+                }
+                .goods_list{
+                    //产生伸缩盒子
+                    display: flex;
+                    // 伸缩盒子换行效果
+                    flex-wrap: wrap;
+                    
+                    navigator{
+                        width: 33.33%;
+                        text-align: center;
+                        .goods_name{
+
+                        }
+                        image{
+                            width: 50%;
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+}

@@ -1,0 +1,122 @@
+page{
+  background-color: #eee;
+}
+.user_info_wrap {
+    height: 45vh;
+    overflow: hidden;
+    background-color:var(--themeColor);
+    position: relative;
+    .user_img_wrap {
+        position: relative;
+      .user_background {
+        height: 50vh;
+        //高斯模糊
+        filter: blur(10rpx);
+      }
+      .user_info{
+        position: absolute;
+        left: 50%;
+        transform:translateX(-50%);
+        top: 30%;
+        text-align: center;
+        .user_icon{
+            height: 160rpx;
+            width: 160rpx;
+            border-radius: 50%;
+        }
+        .user_name{
+            color: white;
+            margin-top: 30rpx;
+            font-size: 40rpx;
+        }
+      }
+      
+  
+    }
+    .user_btn{
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 40%;
+      border: 1rpx solid white;
+      font-size: 40rpx;
+      padding: 30rpx;
+      color: white;
+      border-radius: 20rpx;
+    }
+    
+  }
+.user_content{
+  position: relative;
+  .user_main{
+    position: absolute;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -30rpx;
+
+    .sc_compon_bigs{
+      background-color: white;
+      display: flex;
+      navigator{
+        flex: 1;
+        text-align: center;
+        padding: 10rpx 0;
+        border-right: #ccc 1rpx solid;
+        .c_num{
+          color: var(--themeColor);
+        }
+        .c_name{
+
+        }
+      }
+    }
+    .order_wrap{
+      background-color: white;
+      margin-top: 25rpx;
+      .order_title{
+        padding: 15rpx;
+        border-bottom: 1rpx solid #ccc;
+      }
+      .order_content{
+        padding-top: 10rpx;
+        display: flex;
+        navigator{
+          flex:1;
+          text-align: center;
+          .iconfont{
+            color: var(--themeColor);
+            font-size: 40rpx;
+          }
+          .order_name{
+
+          }
+        }
+      }
+    }
+    .user_phone_M{
+      margin-top: 30rpx;
+      background-color: #fff;
+      padding: 20rpx ;
+    }
+    .app_info_wrap{
+      margin-top: 30rpx;
+      background-color: #fff;
+      .app_info_item{
+        padding: 20rpx ;
+        border-bottom: 1rpx solid #ccc;
+      }
+      .app_info_contact{
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+    .recommend_wrap{
+      margin-top: 30rpx;
+      background-color: #fff;
+      padding: 20rpx ;
+      margin-bottom: 100rpx;
+    }
+  }
+}
+
