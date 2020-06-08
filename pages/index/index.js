@@ -29,6 +29,24 @@ Page({
     //   }
 
     // });
+    var reqTask = wx.request({
+      url: 'http://39.99.199.226:8080/TestMaven/customer/sort',
+      header: {'content-type':'application/json'},
+      method: 'GET',
+      dataType: 'json',
+      responseType: 'text',
+      success: (result) => {
+        console.log(result);
+        var {data}=result.data;
+        console.log(data);
+      },
+      fail: (err) => {
+        console.log("获取失败");
+        
+      },
+      complete: () => {}
+    });
+      
 
     this.getSwiperList();
     this.getCatesList();
