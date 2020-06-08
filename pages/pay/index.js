@@ -77,7 +77,7 @@ Page({
       //console.log("已经存在token")
       //3 创建订单
       //3.1准备 请求头参数
-      const header={Authorization:token};
+      //const header={Authorization:token};
       //3.2 准备请求体参数 order_price 总价格   goods 商品数组
       const order_price=this.data.totalPrice;
       const cart=this.data.cart;
@@ -90,13 +90,13 @@ Page({
       const orderParams={order_price,goods};
       //4 发送请求 创建订单 获取订单编号  临时自定义，没有后台接口 用假的替代
       //const {order_number}=await request({url:"/my/orders/create",method:"POST",data:orderParams,header:header});
-      let {order_number}=await request({url:"/my/orders/create",method:"POST",data:orderParams,header:header});
+      let {order_number}=await request({url:"/my/orders/create",method:"POST",data:orderParams});
       if(!order_number){
         order_number=12345;
       }
       //console.log(order_number);
       //准备 发起预支付接口
-      //const {pay}= await request({url:"/my/orders/req_unifiedorder",method:"POST",header:header,data:{order_number}});
+      //const {pay}= await request({url:"/my/orders/req_unifiedorder",method:"POST",data:{order_number}});
       //console.log(pay);
       /**微信支付
        * 调取微信支付API接口，不是企业id无法使用；
@@ -115,7 +115,7 @@ Page({
       */
       //暂时没有后台数据，所以此处使用假数据代替
       //const res=await request({url:"/my/orders/chkOrder",method:"POST",data:{order_number},header:header});
-      let {message}=await request({url:"/my/orders/chkOrder",method:"POST",data:{order_number},header:header});
+      let {message}=await request({url:"/my/orders/chkOrder",method:"POST",data:{order_number}});
       if(!message){
         message="支付成功";
       }
