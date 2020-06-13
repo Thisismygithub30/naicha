@@ -1,2 +1,24 @@
-<!--pages/collect/index.wxml-->
-<text>pages/collect/index.wxml</text>
+<view class="collect_main">
+    <view class="collect_content">
+        <navigator class="goods_item" 
+                        wx:for="{{collect}}"
+                        wx:key="goods_id"
+                        url="/pages/goods_detail/index?goods_id={{item.goods_id}}"
+            >
+                <!-- 左侧图片结构 -->
+                <view class="goods_img_wrap">
+                    <image src="{{item.goods_small_logo?item.goods_small_logo:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1590402340220&di=088860eb4bc6f9845afc55116286c76b&imgtype=0&src=http%3A%2F%2Fku.90sjimg.com%2Felement_origin_min_pic%2F16%2F08%2F26%2F1957c0226aaca58.jpg%2521%2Ffwfh%2F804x1005%2Fquality%2F90%2Funsharp%2Ftrue%2Fcompress%2Ftrue'}}" mode="widthFix" />
+                      
+                </view>
+                <!-- 右侧商品内容结构 -->
+                <view class="goods_info_wrap">
+                    <view class="goods_name">
+                       {{item.goods_name}}
+                    </view>
+                    <view class="goods_price">
+                        {{item.goods_price}}
+                    </view>
+                </view>
+            </navigator>
+    </view>
+</view>

@@ -1,5 +1,14 @@
 <!-- 选中的商品的内容 -->
 <view class="cart_content">
+
+    <view class="section">
+        <view class="section__title">时间选择器</view>
+        <picker mode="time" value="{{time}}" start="{{startTime}}" end="22:00" bindchange="bindTimeChange">
+            <view class="picker">
+            当前选择: {{time}}
+            </view>
+        </picker>
+    </view>
     <view class="cart_title">
     选中的商品
     </view>
