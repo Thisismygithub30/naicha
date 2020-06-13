@@ -24,7 +24,8 @@ Page({
   data: {
     cart:[],
     totalPrice:0,
-    totalNum:0
+    totalNum:0,
+    hour:-1
   },
 
   /**
@@ -53,11 +54,28 @@ Page({
         totalNum+=v.num;
     })
     //判断数组是否为空
+
+
+    //获取当前时间戳
+    var timestamp = Date.parse(new Date());
+    timestamp = timestamp / 1000;
+
+    var tomorrow_timetamp = timestamp + 15 * 60;
+    var n = tomorrow_timetamp * 1000;
+    var date = new Date(n);
+   
+    //时
+    var h = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
+    //分
+    var m = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
+    let m_15m=h+":"+m;
+    console.log(m_15m);
     
     this.setData({
       cart,
       totalPrice,
-      totalNum
+      totalNum,
+      startTime:m_15m
     });
     
   },
@@ -74,6 +92,14 @@ Page({
         });
         return;
       }
+      const hour=this.data.hour;
+      //console.log(hour);
+      if(hour==-1){
+        //console.log(hour);
+        await showToast({title:"您还没有选择预定的时间"});
+        return;
+      }
+      const sec=this.data.sec;
       //console.log("已经存在token")
       //3 创建订单
       //3.1准备 请求头参数
@@ -85,9 +111,11 @@ Page({
       cart.forEach(v=>goods.push({
         goods_id:v.goods_id,
         goods_number:v.num,
-        goods_price:v.goods_price
+        goods_price:v.goods_price,
+        goods_name:v.goods_name
       }))
-      const orderParams={order_price,goods};
+      const orderParams={order_price,goods,token,hour,sec};
+      console.log(orderParams);
       //4 发送请求 创建订单 获取订单编号  临时自定义，没有后台接口 用假的替代
       //const {order_number}=await request({url:"/my/orders/create",method:"POST",data:orderParams,header:header});
       let {order_number}=await request({url:"/my/orders/create",method:"POST",data:orderParams});
@@ -134,7 +162,19 @@ Page({
     } catch (error) {
       await showToast({title:"支付失败"});
     }
-  }
+  },
+  //时间选择器
+  bindTimeChange: function(e) {
+    console.log('picker发送选择改变，携带值为', e);
+    let hAs=e.detail.value;
+    let hs=hAs.split(":");
+    console.log(hs);
+    this.setData({
+      time: e.detail.value,
+      hour:hs[0],
+      sec:hs[1]
+    })
+  },
 
   
 

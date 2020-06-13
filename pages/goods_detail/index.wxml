@@ -1,63 +1,123 @@
-<view class="detail_swiper">
-    <swiper autoplay circular
-            indicator-dots
-    >
-        <swiper-item 
-        wx:for="{{goodsObj.pics}}"
-        wx:key="pics_id"
-        bindtap="handlePreviewImage"
-        data-url="{{item.pics_mid}}"
+
+<view class="detail_content">
+    <view class="detail_swiper">
+        <swiper autoplay circular
+                indicator-dots
         >
-            <image src="{{item.pics_mid}}" mode="widthFix" ></image>
-        </swiper-item>
-    </swiper>
-</view>
-
-<view class="goods_price">￥{{goodsObj.goods_price}}</view>
-<view class="goods_name_row">
-    <view class="goods_name">{{goodsObj.goods_name}}</view>
-    <view class="goods_collect">
-        <text class="iconfont icon-shoucang">
-
-        </text>
-        <view class="collect_text">收藏</view>
+            <swiper-item 
+            wx:for="{{goodsObj.pics}}"
+            wx:key="pics_id"
+            bindtap="handlePreviewImage"
+            data-url="{{item.pics_mid}}"
+            >
+                <image src="{{item.pics_mid}}" mode="widthFix" ></image>
+            </swiper-item>
+        </swiper>
     </view>
-</view>
 
-<view class="goods_info">
-    <view class="goods_info_title">
-        图文详情
+    <view class="goods_price">￥{{goodsObj.goods_price}}</view>
+    <view class="goods_name_row">
+        <view class="goods_name">{{goodsObj.goods_name}}</view>
+        <view class="goods_collect" bindtap="handleCollect">
+            <text class="iconfont {{isCollect?'icon-shoucang1':'icon-shoucang'}}">
+            </text>
+            <view class="collect_text">收藏</view>
+        </view>
     </view>
-    <view class="goods_info_content">
-        <rich-text nodes="{{goodsObj.goods_introduce}}">
+
+    <view class="goods_info">
+        <view class="goods_info_title">
+            图文详情
+        </view>
+        <view class="goods_info_content">
+            <rich-text nodes="{{goodsObj.goods_introduce}}">
+                
+            </rich-text>
+        </view>
+    </view>
+
+    <view class="btm_tool">
+        <view class="tool_item">
+            <view class="iconfont icon-kefu">
+            </view>
+            <view>客服</view>
+            <button open-type="contact"></button>
+        </view>
+        <view class="tool_item">
+            <view class="iconfont icon-yixianshi-">
+            </view>
+            <view>分享</view>
+            <button open-type="share"></button>
+        </view>
+        <navigator class="tool_item" open-type="switchTab" url="/pages/cart/index">
+            <view class="iconfont icon-gouwuche">
+            </view>
+            <view>购物车</view>
             
-        </rich-text>
+        </navigator>
+        <view class="tool_item btn_cart" bindtap="handleCartAdd">
+            加入购物车
+        </view>
+        <view class="tool_item btn_buy" >
+            预订
+        </view>
     </view>
+
 </view>
 
-<view class="btm_tool">
-    <view class="tool_item">
-        <view class="iconfont icon-kefu">
+ <!--屏幕背景变暗的背景 -->
+ <!-- <view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view> -->
+ <!--弹出框 -->
+ <!-- <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+     <view class="attr_box_goods_info">
+         <image src="{{goodsObj.goods_s_logo}}" mode="widthFix" >
+         </image>
+         <text class="attr_box_goods_title">{{goodsObj.goods_name}}</text>
+     </view>
+     <view class="attr_box">
+         <view class="attr_title">
+             size选择:
+         </view>
+        <view class='attr_content'>
+            <block wx:for="{{selectSize}}"
+                    wx:key="item"
+            >
+                <view class="attr_content_chose {{Sindex==index?'isSelectColor':''}}" bindtap='handleselectSize' data-index='{{item.id}}' data-current='{{index}}'>{{item.name}}</view>
+            </block>
         </view>
-        <view>客服</view>
-        <button open-type="contact"></button>
-    </view>
-    <view class="tool_item">
-        <view class="iconfont icon-yixianshi-">
+     </view>
+     <view class="attr_box">
+         <view class="attr_title">
+             温度选择:
+         </view>
+        <view class='attr_content'>
+            <block wx:for="{{selectIce}}"
+                    wx:key="item"
+            >
+                <view class="attr_content_chose {{Iindex==index?'isSelectColor':''}}" bindtap='handleselectIce' data-index='{{item.id}}' data-current='{{index}}'>{{item.name}}</view>
+            </block>
         </view>
-        <view>分享</view>
-        <button open-type="share"></button>
-    </view>
-    <navigator class="tool_item" open-type="switchTab" url="/pages/cart/index">
-        <view class="iconfont icon-gouwuche">
+     </view>
+     <view class="attr_box">
+         <view class="attr_title">
+             甜度选择:
+         </view>
+        <view class='attr_content'>
+            <block wx:for="{{selectSugger}}"
+                    wx:key="item"
+            >
+                <view class="attr_content_chose {{Suggerindex==index?'isSelectColor':''}}" bindtap='handleselectSugger' data-index='{{item.id}}' data-current='{{index}}'>{{item.name}}</view>
+            </block>
         </view>
-        <view>购物车</view>
-        
-    </navigator>
-    <view class="tool_item btn_cart" bindtap="handleCartAdd">
-        加入购物车
-    </view>
-    <view class="tool_item btn_buy">
-        立即购买
-    </view>
-</view>
+     </view>
+     
+     
+     
+     在这里写弹出框里面的布局</view> -->
+
+
+
+
+
+
+

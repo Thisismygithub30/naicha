@@ -122,6 +122,54 @@
 					"pathName": "pages/order/index",
 					"query": "order_type=1",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的收藏",
+					"pathName": "pages/collect/index",
+					"query": "order_type=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "搜索中心",
+					"pathName": "pages/search/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "弹层测试",
+					"pathName": "pages/tanceng/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "ceshi",
+					"pathName": "pages/tst/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/tstt/index",
+					"pathName": "pages/tstt/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/tst/index",
+					"pathName": "pages/tst/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "ceshi",
+					"pathName": "pages/tst/index",
+					"scene": null
 				}
 			]
 		}

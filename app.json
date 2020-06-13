@@ -1,5 +1,5 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/category/index",
     "pages/goods_list/index",
@@ -12,44 +12,47 @@
     "pages/feedback/index",
     "pages/login/index",
     "pages/auth/index",
-    "pages/pay/index"
+    "pages/pay/index",
+    "pages/tanceng/index",
+    "pages/tst/index",
+    "pages/zuhe/index"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#eb4450",
     "navigationBarTitleText": "奶茶预订",
-    "navigationBarTextStyle":"white"
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "color": "#999",
     "selectedColor": "#ff2d4a",
     "backgroundColor": "#fafafa",
-    "list": [{
-      "pagePath": "pages/index/index",
-      "text": "首页",
-      "iconPath": "icons/zhuye.png",
-      "selectedIconPath": "icons/zhuye_c.png"
-    },
-    {
-      "pagePath": "pages/category/index",
-      "text": "分类",
-      "iconPath": "icons/category.png",
-      "selectedIconPath": "icons/category_c.png"
-    },
-    {
-      "pagePath": "pages/cart/index",
-      "text": "购物车",
-      "iconPath": "icons/cart.png",
-      "selectedIconPath": "icons/cart_c.png"
-    },
-    {
-      "pagePath": "pages/user/index",
-      "text": "我的",
-      "iconPath": "icons/my.png",
-      "selectedIconPath": "icons/my_c.png"
-    }
-
-  ]
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "icons/zhuye.png",
+        "selectedIconPath": "icons/zhuye_c.png"
+      },
+      {
+        "pagePath": "pages/category/index",
+        "text": "分类",
+        "iconPath": "icons/category.png",
+        "selectedIconPath": "icons/category_c.png"
+      },
+      {
+        "pagePath": "pages/cart/index",
+        "text": "购物车",
+        "iconPath": "icons/cart.png",
+        "selectedIconPath": "icons/cart_c.png"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "text": "我的",
+        "iconPath": "icons/my.png",
+        "selectedIconPath": "icons/my_c.png"
+      }
+    ]
   },
   "sitemapLocation": "sitemap.json"
 }
