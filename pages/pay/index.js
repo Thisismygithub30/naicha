@@ -118,7 +118,17 @@ Page({
       console.log(orderParams);
       //4 发送请求 创建订单 获取订单编号  临时自定义，没有后台接口 用假的替代
       //const {order_number}=await request({url:"/my/orders/create",method:"POST",data:orderParams,header:header});
-      let {order_number}=await request({url:"/my/orders/create",method:"POST",data:orderParams});
+      //let {order_number}=await request({url:"/my/orders/create",method:"POST",data:orderParams});
+      let order_number='12314';
+      var reqTask = wx.request({
+        url: 'http://localhost:8080/TestMaven2/customer/order',
+        data: {goods,token,hour,sec},
+        success: (result)=>{
+         console.log("成功发送请求！");
+          console.log(result);
+        }
+        
+      });
       if(!order_number){
         order_number=12345;
       }

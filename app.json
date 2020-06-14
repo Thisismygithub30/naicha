@@ -15,7 +15,8 @@
     "pages/pay/index",
     "pages/tanceng/index",
     "pages/tst/index",
-    "pages/zuhe/index"
+    "pages/zuhe/index",
+    "pages/feilei/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -35,7 +36,7 @@
         "selectedIconPath": "icons/zhuye_c.png"
       },
       {
-        "pagePath": "pages/category/index",
+        "pagePath": "pages/feilei/index",
         "text": "分类",
         "iconPath": "icons/category.png",
         "selectedIconPath": "icons/category_c.png"

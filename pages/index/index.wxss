@@ -4,7 +4,7 @@
 .index_swiper swiper image {
   width: 100%;
 }
-.index_cate {
+/* .index_cate {
   display: flex;
   padding: 20rpx;
 }
@@ -13,7 +13,7 @@
 }
 .index_cate navigator image {
   width: 100%;
-}
+} */
 .index_floor {
   padding-left: 10rpx;
   padding-right: 10rpx;

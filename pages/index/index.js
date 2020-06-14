@@ -1,12 +1,13 @@
 //Page Object
 // 引入用来发送请求的 方法 路径补全
 import { request } from "../../request/index.js";
+import { myrequest } from "../../request/ownIndex.js";
 Page({
   data: {
     //轮播图数组
     swiperList:[],
     //导航数组
-    catesList:[],
+    // catesList:[],
     //楼层数组 此处应该包含推荐数据
     floorList:[]
 
@@ -49,28 +50,30 @@ Page({
       
 
     this.getSwiperList();
-    this.getCatesList();
+    // this.getCatesList();
     this.getFloorList();
   
   },
   //获取轮播图数据方法
   // 防止套娃，使用promise异步处理
   getSwiperList(){
-    request({url:"/home/swiperdata"})
+    myrequest({url:"/homeswiper"})
       .then(result=>{
+        console.log(result);
         this.setData({
-          swiperList:result.data.message
+
+          swiperList:result.data.data
         });
       })
   },
-  getCatesList(){
-    request({url:"/home/catitems"})
-      .then(result=>{
-        this.setData({
-          catesList:result.data.message
-        });
-      })
-  },
+  // getCatesList(){
+  //   request({url:"/home/catitems"})
+  //     .then(result=>{
+  //       this.setData({
+  //         catesList:result.data.message
+  //       });
+  //     })
+  // },
   getFloorList(){
     request({url:"/home/floordata"})
       .then(result=>{

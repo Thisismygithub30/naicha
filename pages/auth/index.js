@@ -38,7 +38,7 @@ Page({
       //因为没有后台 传回token 所以自定义了一个临时变量token 当后台写好后，把token再变回常量
       let {token}=await request({url:"/users/wxlogin",data:{encryptedData,iv,code},method:'post'});
       if(!token){
-        token="nullToken because no houtai"
+        token="ojfLs4v7ls7Vwua-mUh1WFiUnCqE"
       }
       // console.log(res);
       wx.setStorageSync("token", token);

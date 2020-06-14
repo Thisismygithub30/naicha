@@ -36,7 +36,7 @@
   </view>
 
 <!-- 首页导航组件 -->
-  <view class="index_cate">
+  <!-- <view class="index_cate">
     <navigator 
     wx:for="{{catesList}}" 
     wx:key="name"
@@ -45,7 +45,7 @@
       
     </image>
     </navigator>
-  </view>
+  </view> -->
     
 
 <!-- 楼层组件（包含个人推荐区，新品放送区，热销区） -->
